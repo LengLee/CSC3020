@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /*\
+ * To change this license header, choose License Headers in Project Properties.\
+ * To change this template file, choose Tools | Templates\
+ * and open the template in the editor.\
+ */\
+package Validation;\
+\
+/**\
+ *\
+ * @author LengLee\
+ */\
+public class ClassV \{\
+    \
+    private double fleg; \
+    private double sleg; \
+    private double hy; \
+    \
+    public ClassV()\{\
+        fleg = 0.0; \
+        sleg=0.0;\
+        hy=0.0; \
+    \}\
+    \
+    public ClassV(double f, double s, double h)\{\
+        fleg = f;\
+        sleg = s; \
+        hy=h; \
+    \}\
+    \
+    public void setLegs(double f, double s, double h)\{\
+        fleg = f; \
+        sleg= s; \
+        hy = h; \
+    \}\
+    public double getFleg()\{\
+        return fleg; \
+    \}\
+    public double getSleg()\{\
+        return sleg; \
+    \}\
+    public double getHy()\{\
+        return hy; \
+    \}\
+    \
+    public boolean verify()\{\
+        return (fleg*fleg)+(sleg*sleg)==(hy*hy); \
+    \}\
+            \
+    \
+            \
+    \
+\}\
+\
+/*\
+ * To change this license header, choose License Headers in Project Properties.\
+ * To change this template file, choose Tools | Templates\
+ * and open the template in the editor.\
+ */\
+package Validation;\
+import java.util.Scanner; \
+/**\
+ *\
+ * @author LengLee\
+ */\
+public class triangle \{\
+    public static void main (String[] args)\{\
+       Scanner input = new Scanner(System.in); \
+       System.out.println("Enter the first leg :");\
+       double fleg = input.nextDouble(); \
+       System.out.println("Enter the second leg :");\
+       double sleg = input.nextDouble(); \
+       System.out.println("Enter the Hypotenuse :");\
+       double hy = input.nextDouble();\
+       \
+       ClassV tri = new ClassV(fleg, sleg,hy); \
+       \
+       if(tri.verify())\{\
+           System.out.println("Valid");\
+       \}\
+       else \
+           System.out.println("Invalid");\
+       \
+    \}\
+\}\
+}

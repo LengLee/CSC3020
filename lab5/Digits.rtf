@@ -1,0 +1,215 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /*\
+ * To change this license header, choose License Headers in Project Properties.\
+ * To change this template file, choose Tools | Templates\
+ * and open the template in the editor.\
+ */\
+package Question2;\
+import java.util.Scanner; \
+import java.io.*; \
+/**\
+ *\
+ * @author LengLee\
+ */\
+public class Digits \{\
+    public static void main ( String[] args )\
+    throws FileNotFoundException\{\
+        \
+        Scanner input = new Scanner(System.in); \
+        \
+        FileOutputStream fos = new \
+        FileOutputStream ("TelephoneNumberinWordFormat.txt");\
+        PrintStream ps = new PrintStream(fos); \
+        \
+        Character [] phone = new Character [4]; \
+        String uNum; \
+        \
+        char [] two = \{'A' , 'B', 'C'\}; \
+        char [] three = \{'D','E','F'\}; \
+        char [] four = \{'G','H','I'\}; \
+        char [] five= \{'J','K','L'\}; \
+        char [] six=\{'M','N','O'\};\
+        char [] seven =\{'P','Q','R'\};\
+        char [] eight = \{'S','T','U'\};\
+        char [] nine = \{'V','W','X'\}; \
+        \
+        char charAt0[] = new char[3]; \
+        char charAt1[] = new char[3];\
+        char charAt2[] = new char[3]; \
+        char charAt3[] = new char[3]; \
+  \
+        int count = 0; \
+        \
+        System.out.println("Enter your last 4 digits **** ");\
+        uNum = input.nextLine(); \
+        \
+        for(int i = 0 ; i < uNum.length(); i++ )\{\
+            if(i != 3 )\{\
+                if(!Character.isDigit(uNum.charAt(i)))\{\
+                System.out.println("Invalid Digit"); \
+                System.exit(0);\
+            \}\
+                if(uNum.length() > 4)\{\
+                    System.out.println("Invalid Length");\
+                    System.exit(0);\
+                \}\
+                if(uNum.charAt(i)=='0' || uNum.charAt(i)=='1' ||\
+                        uNum.charAt(i) == '-')\{\
+                    System.out.println("Invalid Characters ( 0 , 1, -)");\
+                    System.exit(0);\
+                \}\
+              \
+                \
+            \}\
+        \}\
+        int indx = 0; \
+                for(int i =0;i<uNum.length();i++)\{\
+                    if(i==4) \{\
+                    \} else\{\
+                        phone[indx] = uNum.charAt(i); \
+                        indx++; \
+                    \}\
+                \}\
+        switch (phone[0]) \{\
+            case '2':\
+                System.arraycopy(two, 0, charAt0, 0, charAt0.length);\
+                break;\
+            case '3':\
+                System.arraycopy(three, 0, charAt0, 0, charAt0.length);\
+                break;\
+            case '4':\
+                System.arraycopy(four, 0, charAt0, 0, charAt0.length);\
+                break;\
+            case '5':\
+                System.arraycopy(five, 0, charAt0, 0, charAt0.length);\
+                break;\
+            case '6':\
+                System.arraycopy(six, 0, charAt0, 0, charAt0.length);\
+                break; \
+            case '7':\
+                System.arraycopy(seven, 0, charAt0, 0, charAt0.length);\
+                break;\
+            case '8':\
+                System.arraycopy(eight, 0, charAt0, 0, charAt0.length);\
+                break;\
+            case '9':\
+                System.arraycopy(nine, 0, charAt0, 0, charAt0.length);\
+                break;\
+            default:\
+                break;\
+        \}\
+                \
+        switch (phone[1]) \{\
+            case '2':\
+                System.arraycopy(two, 0, charAt1, 0, charAt1.length);\
+                break;\
+            case '3':\
+                System.arraycopy(three, 0, charAt1, 0, charAt1.length);\
+                break;\
+            case '4':\
+                System.arraycopy(four, 0, charAt1, 0, charAt1.length);\
+                break;\
+            case '5':\
+                System.arraycopy(five, 0, charAt1, 0, charAt1.length);\
+                break;\
+            case '6':\
+                System.arraycopy(six, 0, charAt1, 0, charAt1.length);\
+                break; \
+            case '7':\
+                System.arraycopy(seven, 0, charAt1, 0, charAt1.length);\
+                break;\
+            case '8':\
+                System.arraycopy(eight, 0, charAt1, 0, charAt1.length);\
+                break;\
+            case '9':\
+                System.arraycopy(nine, 0, charAt1, 0, charAt1.length);\
+                break;\
+            default:\
+                break;\
+        \}\
+        \
+        switch (phone[2]) \{\
+            case '2':\
+                System.arraycopy(two, 0, charAt2, 0, charAt2.length);\
+                break;\
+            case '3':\
+                System.arraycopy(three, 0, charAt2, 0, charAt2.length);\
+                break;\
+            case '4':\
+                System.arraycopy(four, 0, charAt2, 0, charAt2.length);\
+                break;\
+            case '5':\
+                System.arraycopy(five, 0, charAt2, 0, charAt2.length);\
+                break;\
+            case '6':\
+                System.arraycopy(six, 0, charAt2, 0, charAt2.length);\
+                break; \
+            case '7':\
+                System.arraycopy(seven, 0, charAt2, 0, charAt2.length);\
+                break;\
+            case '8':\
+                System.arraycopy(eight, 0, charAt2, 0, charAt2.length);\
+                break;\
+            case '9':\
+                System.arraycopy(nine, 0, charAt2, 0, charAt2.length);\
+                break;\
+            default:\
+                break;\
+        \}\
+    \
+        switch (phone[3]) \{\
+            case '2':\
+                System.arraycopy(two, 0, charAt3, 0, charAt3.length);\
+                break;\
+            case '3':\
+                System.arraycopy(three, 0, charAt3, 0, charAt3.length);\
+                break;\
+            case '4':\
+                System.arraycopy(four, 0, charAt3, 0, charAt3.length);\
+                break;\
+            case '5':\
+                System.arraycopy(five, 0, charAt3, 0, charAt3.length);\
+                break;\
+            case '6':\
+                System.arraycopy(six, 0, charAt3, 0, charAt3.length);\
+                break; \
+            case '7':\
+                System.arraycopy(seven, 0, charAt3, 0, charAt3.length);\
+                break;\
+            case '8':\
+                System.arraycopy(eight, 0, charAt3, 0, charAt3.length);\
+                break;\
+            case '9':\
+                System.arraycopy(nine, 0, charAt3, 0, charAt3.length);\
+                break;\
+            default:\
+                break;\
+        \}\
+          \
+           for(int i =0; i<3;i++)\{\
+              for(int j = 0; j<3;j++)\{\
+                  for(int k =0; k<3 ; k++)\{\
+                      for(int l = 0; l<3;l++)\{\
+                      count++; \
+                      ps.append(charAt0[i]); \
+                      ps.append(charAt1[j]); \
+                      ps.append(charAt2[k]); \
+                      ps.append(charAt3[l]); \
+                      ps.append("\\n"); \
+                  \}\
+              \}\
+          \}\
+           \}\
+           ps.print("Combinations: "+ count);\
+           ps.flush(); \
+    \} \
+    \
+   \
+\}\
+}
